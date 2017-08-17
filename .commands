@@ -1,0 +1,13 @@
+export _INPUT="$HADOOP_HOME/bin/hadoop fs -mkdir input0"
+
+export _UPLOAD="$HADOOP_HOME/bin/hadoop fs -put sample_data.txt input0"
+
+export _LIST="$HADOOP_HOME/bin/hadoop fs -ls input0"
+
+export _COMPILE="javac -classpath hadoop-core-1.2.1.jar -d units ProcessUnits.java"
+
+export _BIND="jar -cvf units.jar -C units/ ."
+
+export _RUN="$HADOOP_HOME/bin/hadoop jar units.jar hadoop.ProcessUnits  input0 output0"
+
+export _OUT="$HADOOP_HOME/bin/hadoop fs -cat output0/*" 
